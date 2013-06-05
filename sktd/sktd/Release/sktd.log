@@ -1,0 +1,97 @@
+﻿Build started 2013-05-02 21:13:29.
+     1>Project "D:\Studia\Semestr II\PO\sktd\sktd\sktd.vcxproj" on node 2 (Build target(s)).
+     1>PrepareForBuild:
+         Creating directory "D:\Studia\Semestr II\PO\sktd\Release\".
+       InitializeBuildStatus:
+         Creating "Release\sktd.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         D:\Programy\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\sfml\release\SFML\include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt buttons.cpp continue_game.cpp end_game.cpp entities.cpp game_engine.cpp game_window.cpp immovable.cpp main.cpp map.cpp menu.cpp mobs.cpp movable.cpp new_game.cpp player_console.cpp projectiles.cpp tiles.cpp towers.cpp window.cpp
+         buttons.cpp
+         continue_game.cpp
+         end_game.cpp
+         entities.cpp
+         game_engine.cpp
+         game_window.cpp
+         immovable.cpp
+     1>immovable.cpp(8): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         main.cpp
+         map.cpp
+         menu.cpp
+     1>menu.cpp(14): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>menu.cpp(59): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>menu.cpp(63): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>menu.cpp(67): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         mobs.cpp
+         movable.cpp
+     1>movable.cpp(9): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>movable.cpp(19): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         new_game.cpp
+         player_console.cpp
+         projectiles.cpp
+         tiles.cpp
+         towers.cpp
+         window.cpp
+       Link:
+         D:\Programy\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Studia\Semestr II\PO\sktd\Release\sktd.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:D:\sfml\release\SFML\lib "sfml-system-s.lib" "sfml-window-s.lib" "sfml-graphics-s.lib" "sfml-main.lib" "sfml-network-s.lib" "sfml-audio-s.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Studia\Semestr II\PO\sktd\Release\sktd.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Studia\Semestr II\PO\sktd\Release\sktd.lib" /MACHINE:X86 /SAFESEH Release\buttons.obj
+         Release\continue_game.obj
+         Release\end_game.obj
+         Release\entities.obj
+         Release\game_engine.obj
+         Release\game_window.obj
+         Release\immovable.obj
+         Release\main.obj
+         Release\map.obj
+         Release\menu.obj
+         Release\mobs.obj
+         Release\movable.obj
+         Release\new_game.obj
+         Release\player_console.obj
+         Release\projectiles.obj
+         Release\tiles.obj
+         Release\towers.obj
+         Release\window.obj
+     1>buttons.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static class sf::RenderStates const sf::RenderStates::Default" (__imp_?Default@RenderStates@sf@@2V12@B)
+     1>buttons.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::RenderTarget::draw(class sf::Drawable const &,class sf::RenderStates const &)" (__imp_?draw@RenderTarget@sf@@QAEXABVDrawable@2@ABVRenderStates@2@@Z)
+     1>entities.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: class sf::Vector2<float> const & __thiscall sf::Transformable::getPosition(void)const " (__imp_?getPosition@Transformable@sf@@QBEABV?$Vector2@M@2@XZ)
+     1>entities.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: class sf::Vector2<unsigned int> __thiscall sf::Texture::getSize(void)const " (__imp_?getSize@Texture@sf@@QBE?AV?$Vector2@I@2@XZ)
+     1>entities.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Texture::~Texture(void)" (__imp_??1Texture@sf@@QAE@XZ)
+     1>entities.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Texture::Texture(void)" (__imp_??0Texture@sf@@QAE@XZ)
+     1>entities.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Sprite::Sprite(void)" (__imp_??0Sprite@sf@@QAE@XZ)
+     1>entities.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall sf::Sprite::~Sprite(void)" (__imp_??1Sprite@sf@@UAE@XZ)
+     1>game_engine.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: bool __thiscall sf::Window::pollEvent(class sf::Event &)" (__imp_?pollEvent@Window@sf@@QAE_NAAVEvent@2@@Z)
+     1>game_engine.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: bool __thiscall sf::Window::isOpen(void)const " (__imp_?isOpen@Window@sf@@QBE_NXZ)
+     1>game_window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Window::display(void)" (__imp_?display@Window@sf@@QAEXXZ)
+     1>game_window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Window::close(void)" (__imp_?close@Window@sf@@QAEXXZ)
+     1>game_window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static class sf::Color const sf::Color::Black" (__imp_?Black@Color@sf@@2V12@B)
+     1>game_window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::RenderTarget::clear(class sf::Color const &)" (__imp_?clear@RenderTarget@sf@@QAEXABVColor@2@@Z)
+     1>immovable.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Transformable::setPosition(float,float)" (__imp_?setPosition@Transformable@sf@@QAEXMM@Z)
+     1>immovable.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: bool __thiscall sf::Texture::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class sf::Rect<int> const &)" (__imp_?loadFromFile@Texture@sf@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$Rect@H@2@@Z)
+     1>immovable.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Sprite::setTexture(class sf::Texture const &,bool)" (__imp_?setTexture@Sprite@sf@@QAEXABVTexture@2@_N@Z)
+     1>map.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Texture::Texture(class sf::Texture const &)" (__imp_??0Texture@sf@@QAE@ABV01@@Z)
+     1>map.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Sprite::Sprite(class sf::Sprite const &)" (__imp_??0Sprite@sf@@QAE@ABV01@@Z)
+     1>movable.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Transformable::move(float,float)" (__imp_?move@Transformable@sf@@QAEXMM@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: static class sf::Color const sf::Color::White" (__imp_?White@Color@sf@@2V12@B)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::String::String(char const *,class std::locale const &)" (__imp_??0String@sf@@QAE@PBDABVlocale@std@@@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: bool __thiscall sf::Font::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@Font@sf@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Font::~Font(void)" (__imp_??1Font@sf@@QAE@XZ)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Font::Font(void)" (__imp_??0Font@sf@@QAE@XZ)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Text::setColor(class sf::Color const &)" (__imp_?setColor@Text@sf@@QAEXABVColor@2@@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Text::setStyle(unsigned int)" (__imp_?setStyle@Text@sf@@QAEXI@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Text::setFont(class sf::Font const &)" (__imp_?setFont@Text@sf@@QAEXABVFont@2@@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Text::setString(class sf::String const &)" (__imp_?setString@Text@sf@@QAEXABVString@2@@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Text::Text(void)" (__imp_??0Text@sf@@QAE@XZ)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::Text::Text(class sf::String const &,class sf::Font const &,unsigned int)" (__imp_??0Text@sf@@QAE@ABVString@1@ABVFont@1@I@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: class sf::Text & __thiscall sf::Text::operator=(class sf::Text const &)" (__imp_??4Text@sf@@QAEAAV01@ABV01@@Z)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::String::~String(void)" (__imp_??1String@sf@@QAE@XZ)
+     1>player_console.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall sf::Text::~Text(void)" (__imp_??1Text@sf@@UAE@XZ)
+     1>window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall sf::RenderWindow::~RenderWindow(void)" (__imp_??1RenderWindow@sf@@UAE@XZ)
+     1>window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::RenderWindow::RenderWindow(void)" (__imp_??0RenderWindow@sf@@QAE@XZ)
+     1>window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: void __thiscall sf::Window::create(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &)" (__imp_?create@Window@sf@@QAEXVVideoMode@2@ABVString@2@IABUContextSettings@2@@Z)
+     1>window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::String::String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::locale const &)" (__imp_??0String@sf@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVlocale@3@@Z)
+     1>window.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int)" (__imp_??0VideoMode@sf@@QAE@III@Z)
+     1>D:\Studia\Semestr II\PO\sktd\Release\sktd.exe : fatal error LNK1120: 39 unresolved externals
+     1>Done Building Project "D:\Studia\Semestr II\PO\sktd\sktd\sktd.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:13.85
