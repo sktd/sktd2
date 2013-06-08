@@ -15,8 +15,11 @@ namespace engine
 		void handling_control();
 	private:
 		sf::Clock clock;
+		sf::Time time;
+		sf::Int64 timeInt;
 		map::map map1;
 		player_console console;
+		int next_wave;
 	};
 }
 

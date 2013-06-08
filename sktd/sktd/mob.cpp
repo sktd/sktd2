@@ -4,6 +4,7 @@
 map::mob::mob(double px, double py, std::string s, double vel, double hlth, int wrth, int destination):
 	drawable(px, py, s), health(hlth), worth(wrth), velocity(vel), destination(destination)
 {
+	ready=false;
 }
 
 map::mob::~mob(void)
@@ -45,4 +46,19 @@ int map::mob::get_destination()
 void map::mob::set_destination(int d)
 {
 	destination=d;
+}
+
+//int map::mob::get_id()
+//{
+//	return id;
+//}
+
+bool map::mob::is_ready()
+{
+	return ready;
+}
+
+void map::mob::start()
+{
+	ready=true;
 }

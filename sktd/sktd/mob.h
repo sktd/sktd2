@@ -14,10 +14,15 @@ namespace map
 		void reduce_health(double how_many);
 		int get_destination();
 		void set_destination(int d);
+	//	int get_id();
+		bool is_ready();
+		void start();
 	private:
 		int destination;
 		double health;
 		int worth;
+	//	int id;
+		bool ready;
 		double velocity;
 	};
 }

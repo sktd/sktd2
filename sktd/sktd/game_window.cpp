@@ -4,6 +4,7 @@
 engine::game_window::game_window(int w, int h, int cd, int style, std::string t):
 	window(w, h, cd, style, t)
 {
+	next_wave=1;
 }
 
 
@@ -31,13 +32,13 @@ void engine::game_window::handling_control()
 			}
 		
 			if( ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Num1 )
-				map1.build_tower("t1.png",100,20, console, 1);
+				map1.build_tower("t1.png",100,10, console, 1);
 			
 			if( ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Num2 )
 				map1.build_tower("t2.png",100,20, console, 2);
 			
 			if( ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Num3 )
-				map1.build_tower("t3.png",100,20, console, 1);
+				map1.build_tower("t3.png",100,30, console, 1);
 		
 			if( ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Right )
 				map1.move_chosen_r();
@@ -47,8 +48,13 @@ void engine::game_window::handling_control()
 				
 		
 		}
-		if(int(clock.getElapsedTime().asMilliseconds())==2000)
+		time=clock.getElapsedTime();
+		timeInt=time.asSeconds();
+		if(timeInt==2&&next_wave==1){
 			map1.begin_wave(map1.get_start_x(), map1.get_start_y(), "pacman.png", 0.1, 2,2,3);
+			next_wave++;
+		}
+			
 		display();
 //	}
 

@@ -66,6 +66,12 @@
     <ClCompile Include="tower2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Projectile1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="movable.h">
@@ -114,6 +120,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tower2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

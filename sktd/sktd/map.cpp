@@ -9,11 +9,26 @@ map::map::map(void)
 {
 	
 	load_level("lvl.txt");
-	for(int i=0;;i++)
+	for(int i=0;;i++){
 		if(track[i].get_type()==1){
 			chosen=&track[i];
 			break;
 		}
+	}
+	for(int i=0;;i++){
+		if(track[i].get_type()==3){
+			start_x=track[i].get_pos_x();
+			start_y=track[i].get_pos_y();
+			break;
+		}
+	}
+	for(int i=0;;i++){
+		if(track[i].get_type()==4){
+			end_x=track[i].get_pos_x();
+			end_y=track[i].get_pos_y();
+			break;
+		}
+	}
 }
 
 
@@ -23,28 +38,10 @@ map::map::~map(void)
 
 void map::map::begin_wave(double px, double py, std::string s, double vel, double hlth, int wrth, int hm)
 {
-	itm=mobs.begin();
-	//mob *wsk=new mob(px, py, s, vel, hlth, wrth, 0);
-	//mobs.insert(itm, hm, wsk);
-	//while(hm--)
-	mobs.push_back(new mob(px, py, s, vel, hlth, wrth, 0));
-
-	//int x=0;
-	//for(int i=0;i<hm;i++){
-	//	(*itm)->move(x, 0);
-	//	++itm;
-	//	x+=30;
-	//}
-	/*while(hm--){
-		itm=mobs.begin();
-		mob *wsk=new mob(px, py, s, vel, hlth, wrth);
-		mobs_list.insert(itm, *wsk);
-	}*/
-	/*while(itm!=mobs.end()){
-		(*itm)->move();
-		++itm;
-		x+=30;
-	}*/
+	while(hm--){
+		mob *wsk=new mob(px, py, s, vel, hlth, wrth, 0);
+		mobs.push_back(wsk);
+	}
 }
 
 void map::map::end_wave()
@@ -180,43 +177,57 @@ void map::map::load_level(std::string filename){
 }
 
 void map::map::build_tower(std::string s, double spd, int cst, engine::player_console &console, int which_tower){
-	tower *wsk;
-	switch ( which_tower ) {
-	case 1:
-		wsk=new tower1((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst);
-		break;
-	case 2:
-		wsk=new tower2((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst, 0.1);
-		break;
+	if(chosen!=NULL){
+		tower *wsk;
+		switch ( which_tower ) {
+		case 1:
+			wsk=new tower1((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst);
+			break;
+		case 2:
+			wsk=new tower2((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst, 0.1);
+			break;
+		}
+		if(console.get_resources()>=(*wsk).get_cost()){
+			towers.push_back(wsk);
+			(*chosen).set_type(0);
+			move_chosen_r();
+			console.subtract_resources((*wsk).get_cost());
+		}
 	}
-	towers.push_back(wsk);
-	(*chosen).set_type(0);
-	move_chosen_r();
-	console.subtract_resources(cst);
 }
 
 void map::map::display(sf::RenderWindow &win, engine::player_console &console){
 
-	/*for(int i=0;i<width;i++)
-		for(int j=0;j<height;j++)
-			track[i][j].draw(win);*/
-	for(int i=0;i<width*height;i++)
-		track[i].draw(win);
-	
+	for(int i=0;i<width*height;i++){
+		if(track[i].get_type()!=0)
+			track[i].draw(win);
+	}
 
 	itm=mobs.begin();
-	/*if(itm!=mobs.end()&&(*itm)->get_pos_x()==get_end_x()&&(*itm)->get_pos_y()==get_end_y()){
-		int tmp=mobs.size();
-		while(tmp--)
-			console.subtract_life();
-		mobs.clear();
-		itm=mobs.begin();
-	}*/
 	while(itm!=mobs.end()){
-		
-		set_direction(*(*itm));
-		(*itm)->move();
-		(*itm)->draw(win);
+		if((*itm)->is_ready()==true){
+			set_direction(*(*itm));
+			(*itm)->move();
+			(*itm)->draw(win);
+		}
+		else{
+			time=clock.getElapsedTime();
+			timeInt=time.asSeconds();
+			if(timeInt==2){
+				(*itm)->start();
+				clock.restart();
+			}
+		}
+		++itm;
+	}
+	itm=mobs.begin();
+	while(itm!=mobs.end()){
+		if(int((*itm)->get_pos_x())==int(get_end_x())&&int((*itm)->get_pos_y())==int(get_end_y())){
+			delete (*itm);
+			mobs.erase(itm);
+			console.subtract_life();
+			break;
+		}
 		++itm;
 	}
 
@@ -233,75 +244,63 @@ void map::map::display(sf::RenderWindow &win, engine::player_console &console){
 
 double map::map::get_start_x()
 {
-	for(int i=0;;i++)
-		if(track[i].get_type()==3){
-			return track[i].get_pos_x();
-			break;
-		}
+	return start_x;
 }
+
 
 double map::map::get_start_y()
 {
-	for(int i=0;;i++)
-		if(track[i].get_type()==3){
-			return track[i].get_pos_y();
-			break;
-		}
+	return start_y;
 }
 
 double map::map::get_end_x()
 {
-	for(int i=0;;i++)
-		if(track[i].get_type()==4){
-			return track[i].get_pos_x();
-			break;
-		}
+	return end_x;
 }
 
 double map::map::get_end_y()
 {
-	for(int i=0;;i++)
-		if(track[i].get_type()==4){
-			return track[i].get_pos_y();
-			break;
-		}
-
+	return end_y;
 }
 
 void map::map::move_chosen_l()
 {
-	int i=0;
-	if(chosen!=track) //przsuwa raz zeby zastosowac warunek w petli
-		chosen--;
-	else
-		chosen=&track[width*height-1];
-	while((*chosen).get_type()!=1&&i!=height*width){
-		if(chosen!=track)
+	if(chosen!=NULL){
+		int i=0;
+		if(chosen!=track) //przsuwa raz zeby zastosowac warunek w petli
 			chosen--;
 		else
 			chosen=&track[width*height-1];
-		i++;
+		while((*chosen).get_type()!=1&&i!=height*width){
+			if(chosen!=track)
+				chosen--;
+			else
+				chosen=&track[width*height-1];
+			i++;
+		}
+		if(i==width*height)
+			chosen=NULL;
 	}
-	if(i==width*height)
-		chosen=NULL;
 }
 
 void map::map::move_chosen_r()
 {
-	int i=0;
-	if(chosen!=&track[width*height-1])  //przesuwa raz zeby zastosowac warunek w petli
-		chosen++;
-	else
-		chosen=track;
-	while((*chosen).get_type()!=1&&i!=height*width){
-		if(chosen!=&track[width*height-1])
+	if(chosen!=NULL){
+		int i=0;
+		if(chosen!=&track[width*height-1])  //przesuwa raz zeby zastosowac warunek w petli
 			chosen++;
 		else
 			chosen=track;
-		i++;
+		while((*chosen).get_type()!=1&&i!=height*width){
+			if(chosen!=&track[width*height-1])
+				chosen++;
+			else
+				chosen=track;
+			i++;
+		}
+		if(i==width*height)
+			chosen=NULL;
 	}
-	if(i==width*height)
-		chosen=NULL;
 }
 
 void map::map::set_direction(mob &m){//poruszanie mobem po torze

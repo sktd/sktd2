@@ -21,19 +21,29 @@ map::tower2::~tower2(void)
 
 void map::tower2::fire()
 {
-	if(clock.getElapsedTime().asMilliseconds()==100){
-		projectile *wsk=new projectile(get_pos_x(), get_pos_y(), "pocisk.png", 10, 10, 10);
+	time=clock.getElapsedTime();
+	timeInt=time.asMilliseconds()+21;
+	if(timeInt%2000<10){
+		Projectile2 *wsk=new Projectile2(get_pos_x(), get_pos_y(), "pocisk_kolowy.png", 1, 10, 10);
 		projectiles.push_back(wsk);
 	}
 }
 
 void map::tower2::draw(sf::RenderWindow &win)
 {
-	itp=projectiles.begin();
-	while(itp!=projectiles.end()){
-		(*itp)->move(0.1,0);
-		(*itp)->draw(win);
-		++itp;
+	it=projectiles.begin();
+	while(it!=projectiles.end()){
+		if((*it)->get_scale()>10){
+			delete (*it);
+			projectiles.erase(it);
+			break;
+		}
+		++it;
+	}
+	it=projectiles.begin();
+	while(it!=projectiles.end()){
+		(*it)->draw(win);
+		++it;
 	}
 	sp.setRotation(sp.getRotation()+rotation);
 	win.draw(sp);

@@ -15,12 +15,14 @@ namespace map
 		int get_cost();
 	//	projectiles projectile;
 	protected:
-		std::vector<projectile*> projectiles;
-		std::vector<projectile*>::iterator itp;
+		/*std::vector<projectile*> projectiles;
+		std::vector<projectile*>::iterator itp;*/
 		double pos_x;
 		double pos_y;
 		int cost;
 		double speed;
 		sf::Clock clock;
+		sf::Time time;
+		int timeInt;
 	};
 }

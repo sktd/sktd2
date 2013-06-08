@@ -94,6 +94,8 @@
     <ClCompile Include="movable.cpp" />
     <ClCompile Include="player_console.cpp" />
     <ClCompile Include="projectile.cpp" />
+    <ClCompile Include="Projectile1.cpp" />
+    <ClCompile Include="Projectile2.cpp" />
     <ClCompile Include="tile.cpp" />
     <ClCompile Include="tower.cpp" />
     <ClCompile Include="tower1.cpp" />
@@ -112,6 +114,8 @@
     <ClInclude Include="movable.h" />
     <ClInclude Include="player_console.h" />
     <ClInclude Include="projectile.h" />
+    <ClInclude Include="Projectile1.h" />
+    <ClInclude Include="Projectile2.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="tower.h" />
     <ClInclude Include="tower1.h" />

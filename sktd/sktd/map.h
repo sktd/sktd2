@@ -34,6 +34,10 @@ namespace map
 	private:
 		const static int width=4;
 		const static int height=5;
+		double start_x;
+		double start_y;
+		double end_x;
+		double end_y;
 		std::vector <mob*> mobs;
 		std::vector <tower*> towers;
 		std::vector<mob*>::iterator itm;
@@ -42,6 +46,8 @@ namespace map
 		tile * chosen;
 		int track2[801][601];
 		sf::Clock clock;
+		sf::Time time;
+		sf::Int32 timeInt;
 	};
 }
 

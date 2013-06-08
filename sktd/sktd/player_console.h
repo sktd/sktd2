@@ -13,6 +13,7 @@ namespace engine
 		void subtract_life();
 		void add_resources(int how_many);
 		void subtract_resources(int how_many);
+		int get_resources();
 		void display(sf::RenderWindow &win);
 	private:
 		int lifes;

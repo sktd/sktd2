@@ -3,7 +3,7 @@
 
 engine::player_console::player_console():
 	tower1(100, 500, "t1.png", 10),
-	tower2(150, 500, "t2.png", 20),
+	tower2(150, 500, "t2.png", 20, 20, 0.1),
 	tower3(200, 500, "t3.png", 30)
 {
 	font.loadFromFile("Andale_Mono.ttf");
@@ -35,7 +35,7 @@ engine::player_console::player_console():
 	lfs.setColor(sf::Color::White);
 	lfs.setPosition(20, 500);
 
-	resources=1000;
+	resources=100;
 	rscs.setFont(font);
 	rscs.setCharacterSize(50);
 	rscs.setColor(sf::Color::White);
@@ -74,4 +74,9 @@ void engine::player_console::subtract_life()
 void engine::player_console::subtract_resources(int how_many)
 {
 	resources-=how_many;
+}
+
+int engine::player_console::get_resources()
+{
+	return resources;
 }

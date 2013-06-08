@@ -1,5 +1,6 @@
 #pragma once
 #include "tower.h"
+#include "Projectile1.h"
 namespace map
 {
 	class tower1 :
@@ -11,5 +12,8 @@ namespace map
 		~tower1(void);
 		void draw(sf::RenderWindow &win);
 		void fire();
+	private:
+		std::vector<Projectile1*>projectiles;
+		std::vector<Projectile1*>::iterator it;
 	};
 }

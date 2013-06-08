@@ -17,12 +17,20 @@ void map::projectile::move(double x, double y)
 	sp.move(x,y);
 }
 
-double map::projectile::get_scale()
+void map::projectile::move(int destination)
 {
-	return sp.getScale().x;
-}
-
-void map::projectile::set_scale(double sc)
-{
-	sp.setScale(sc, sc);
+	switch(destination){
+	case 1:
+		sp.move(velocity, 0);
+		break;
+	case 2:
+		sp.move(-velocity, 0);
+		break;
+	case 3:
+		sp.move(0, velocity);
+		break;
+	case 4:
+		sp.move(0, -velocity);
+		break;
+	}
 }

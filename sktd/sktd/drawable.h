@@ -14,6 +14,10 @@ namespace ent
 		double get_size_y();
 		double get_pos_x();
 		double get_pos_y();
+		/*int get_size_x();
+		int get_size_y();
+		int get_pos_x();
+		int get_pos_y();*/
 	
 	protected:
 		sf::Texture t;

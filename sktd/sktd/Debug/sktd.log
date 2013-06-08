@@ -1,13 +1,11 @@
-﻿Build started 2013-06-05 18:10:42.
+﻿Build started 2013-06-08 18:56:54.
      1>Project "D:\Studia\Semestr II\PO\sktd\sktd\sktd.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\sktd.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         D:\Programy\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\sfml\debug\SFML\include /ZI /nologo /W3 /WX- /Od /Oy- /D SFML_STATIC /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt map.cpp
-         map.cpp
-     1>d:\studia\semestr ii\po\sktd\sktd\map.cpp(135): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\studia\semestr ii\po\sktd\sktd\map.cpp(308): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>d:\studia\semestr ii\po\sktd\sktd\map.cpp(309): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+         D:\Programy\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\sfml\debug\SFML\include /ZI /nologo /W3 /WX- /Od /Oy- /D SFML_STATIC /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt game_window.cpp
+         game_window.cpp
+     1>d:\studia\semestr ii\po\sktd\sktd\game_window.cpp(52): warning C4244: '=' : conversion from 'float' to 'sf::Int64', possible loss of data
        Link:
          D:\Programy\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Studia\Semestr II\PO\sktd\Debug\sktd.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\sfml\debug\SFML\lib "sfml-system-s-d.lib" "sfml-window-s-d.lib" "sfml-graphics-s-d.lib" "sfml-main-d.lib" "sfml-network-s-d.lib" "sfml-audio-s-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Studia\Semestr II\PO\sktd\Debug\sktd.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Studia\Semestr II\PO\sktd\Debug\sktd.lib" /MACHINE:X86 Debug\button.obj
          Debug\drawable.obj
@@ -21,6 +19,8 @@
          Debug\movable.obj
          Debug\player_console.obj
          Debug\projectile.obj
+         Debug\Projectile1.obj
+         Debug\Projectile2.obj
          Debug\tile.obj
          Debug\tower.obj
          Debug\tower1.obj
@@ -34,4 +34,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.41
+Time Elapsed 00:00:02.30
