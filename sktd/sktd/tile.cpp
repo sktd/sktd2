@@ -23,7 +23,7 @@ map::tile::tile()
 void map::tile::draw2(sf::RenderWindow &win)
 {
 	sf::Texture t;
-	t.loadFromFile("wyb.bmp");
+	t.loadFromFile("Grafika/wybrane.png");
 	sf::Sprite sp2;
 	sp2.setTexture(t);
 	sp2.setPosition(get_pos_x(), get_pos_y());

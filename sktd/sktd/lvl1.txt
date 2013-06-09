@@ -1,4 +1,4 @@
 X#X###XX
 B#B#B#XX
-X###B##X
+X# #B##X
 XBXXXX#B

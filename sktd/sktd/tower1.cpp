@@ -19,10 +19,10 @@ map::tower1::~tower1(void)
 
 void map::tower1::fire(){
 	time=clock.getElapsedTime();
-	timeInt=time.asMilliseconds()+10;
-	if(timeInt%500<10){
+	timeInt=time.asMilliseconds()+20;
+	if(timeInt%600<20){
 		int destination=int(rand())%4+1;
-		Projectile1 *wsk=new Projectile1(get_pos_x()+10, get_pos_y()+10, "pocisk.png", speed, 10, 10, destination);
+		Projectile1 *wsk=new Projectile1(get_pos_x()+10, get_pos_y()+5, "Grafika/fball.png", speed, 10, 10, destination);
 		projectiles.push_back(wsk);
 		clock.restart();
 	}

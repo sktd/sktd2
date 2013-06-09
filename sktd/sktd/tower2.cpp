@@ -22,9 +22,9 @@ map::tower2::~tower2(void)
 void map::tower2::fire()
 {
 	time=clock.getElapsedTime();
-	timeInt=time.asMilliseconds()+11;
-	if(timeInt%2000<10){
-		Projectile2 *wsk=new Projectile2(get_pos_x(), get_pos_y(), "pocisk_kolowy.png", 1, 0.5, 10);
+	timeInt=time.asMilliseconds()+21;
+	if(timeInt%1000<20){
+		Projectile2 *wsk=new Projectile2(get_pos_x(), get_pos_y(), "Grafika/kolowy2.png", 1, 0.5, 10);
 		projectiles.push_back(wsk);
 	}
 }
@@ -34,7 +34,7 @@ void map::tower2::draw(sf::RenderWindow &win)
 	win.draw(sp);
 	it=projectiles.begin();
 	while(it!=projectiles.end()){
-		if((*it)->get_scale()>10){
+		if((*it)->get_scale()>0.8){
 			delete (*it);
 			projectiles.erase(it);
 			break;

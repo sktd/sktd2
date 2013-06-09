@@ -133,14 +133,14 @@ void map::map::load_level(std::string filename){
 				switch(tmp[i]){
 				case 'B':
 					{
-					tile *wsk=new tile(x,y,"tor1.bmp",1);
+					tile *wsk=new tile(x,y,"Grafika/budowa.png",1);
 					track[tiles]=*wsk;
 					tiles++;
 					break;
 					}
 				case 'X':
 					{
-					tile *wsk=new tile(x,y,"tor2.bmp",2);
+					tile *wsk=new tile(x,y,"Grafika/droga.png",2);
 					track[tiles]=*wsk;
 					tiles++;
 					track2[x][y]=1;
@@ -148,7 +148,7 @@ void map::map::load_level(std::string filename){
 					}
 				case 'S'://pierwszy tile trasy po ktorej ida moby
 					{
-					tile *wsk=new tile(x,y,"tor2.bmp", 3);
+					tile *wsk=new tile(x,y,"Grafika/start.png", 3);
 					track[tiles]=*wsk;
 					tiles++;
 					track2[x][y]=1;
@@ -156,7 +156,7 @@ void map::map::load_level(std::string filename){
 					}
 				case 'E'://ostatni tile trasy po ktorej ida moby
 					{
-					tile *wsk=new tile(x,y,"tor2.bmp", 4);
+					tile *wsk=new tile(x,y,"Grafika/koniec.png", 4);
 					track[tiles]=*wsk;
 					tiles++;
 					track2[x][y]=1;
@@ -184,7 +184,7 @@ void map::map::build_tower(std::string s, double spd, int cst, engine::player_co
 			wsk=new tower1((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst);
 			break;
 		case 2:
-			wsk=new tower2((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst, 0.1);
+			wsk=new tower2((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst, 1);
 			break;
 		}
 		if(console.get_resources()>=(*wsk).get_cost()){

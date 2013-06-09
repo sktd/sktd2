@@ -1,5 +1,5 @@
-SXXX
-BBBX
-XXXX
-XBBB
-XXXE
+SXXXXXX         
+B B B X         
+XXXXXXX         
+XB B            
+XXXE            

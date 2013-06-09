@@ -5,6 +5,8 @@ engine::game_window::game_window(int w, int h, int cd, int style, std::string t)
 	window(w, h, cd, style, t)
 {
 	next_wave=1;
+	background.loadFromFile("Grafika/gra.png");
+	bg.setTexture(background);
 }
 
 
@@ -15,6 +17,7 @@ engine::game_window::~game_window(void)
 void engine::game_window::display()
 {
 	win.clear(sf::Color::Black);
+	win.draw(bg);
 	map1.display(win, console);
 	console.display(win);
 	win.display();

@@ -12,11 +12,11 @@ int main()
 	engine.manage_game();
 	
 
-	/*sf::Image im;
-	im.loadFromFile("pocisk_kolowy.bmp");
-	im.createMaskFromColor(sf::Color::Black);
+	sf::Image im;
+	im.loadFromFile("pk.bmp");
+	im.createMaskFromColor(sf::Color::White);
 	im.saveToFile("pocisk_kolowy.png");
-*/
+
 
     return 0;
 }
