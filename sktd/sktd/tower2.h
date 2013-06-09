@@ -1,6 +1,8 @@
 #pragma once
 #include "tower.h"
 #include "Projectile2.h"
+//#include "player_console.h"
+//#include "mob.h"
 namespace map
 {
 	class tower2 :
@@ -12,6 +14,7 @@ namespace map
 		~tower2(void);
 		void fire();
 		void draw(sf::RenderWindow &win);
+		void check_collisions(mob &m);
 	private:
 		std::vector<Projectile2*>projectiles;
 		std::vector<Projectile2*>::iterator it;

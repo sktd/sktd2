@@ -91,7 +91,6 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="mob.cpp" />
     <ClCompile Include="mob1.cpp" />
-    <ClCompile Include="movable.cpp" />
     <ClCompile Include="player_console.cpp" />
     <ClCompile Include="projectile.cpp" />
     <ClCompile Include="Projectile1.cpp" />
@@ -111,7 +110,6 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="mob.h" />
     <ClInclude Include="mob1.h" />
-    <ClInclude Include="movable.h" />
     <ClInclude Include="player_console.h" />
     <ClInclude Include="projectile.h" />
     <ClInclude Include="Projectile1.h" />

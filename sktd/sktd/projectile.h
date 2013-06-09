@@ -11,6 +11,7 @@ namespace map
 		~projectile(void);
 		void move(double x, double y);
 		void move(int destination);
+		double get_damage();
 		virtual void draw(sf::RenderWindow &win)=0;
 	protected:
 		double damage;

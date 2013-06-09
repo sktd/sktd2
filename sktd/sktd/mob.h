@@ -1,5 +1,6 @@
 #pragma once
 #include "drawable.h"
+#include "projectile.h"
 #include <SFML/Graphics.hpp>
 namespace map
 {
@@ -14,15 +15,20 @@ namespace map
 		void reduce_health(double how_many);
 		int get_destination();
 		void set_destination(int d);
-	//	int get_id();
 		bool is_ready();
 		void start();
+		bool collision(projectile &p);
+		double get_health();
+		int get_worth();
+		void reduce_speed(double how_much);
+		bool isReduced();
+	/*	void check_collisions(tower &t);*/
 	private:
 		int destination;
 		double health;
 		int worth;
-	//	int id;
 		bool ready;
+		bool is_reduced;
 		double velocity;
 	};
 }

@@ -206,20 +206,21 @@ void map::map::display(sf::RenderWindow &win, engine::player_console &console){
 	itm=mobs.begin();
 	while(itm!=mobs.end()){
 		if((*itm)->is_ready()==true){
-			set_direction(*(*itm));
+			set_direction(**itm);
 			(*itm)->move();
 			(*itm)->draw(win);
 		}
 		else{
 			time=clock.getElapsedTime();
 			timeInt=time.asSeconds();
-			if(timeInt==2){
+			if(timeInt==1){
 				(*itm)->start();
 				clock.restart();
 			}
 		}
 		++itm;
 	}
+	
 	itm=mobs.begin();
 	while(itm!=mobs.end()){
 		if(int((*itm)->get_pos_x())==int(get_end_x())&&int((*itm)->get_pos_y())==int(get_end_y())){
@@ -230,7 +231,16 @@ void map::map::display(sf::RenderWindow &win, engine::player_console &console){
 		}
 		++itm;
 	}
-
+	itm=mobs.begin();
+	while(itm!=mobs.end()){
+		if((**itm).get_health()<=0){
+			console.add_resources((*itm)->get_worth());
+			delete *itm;
+			mobs.erase(itm);
+			break;
+		}
+		++itm;
+	}
 	if(chosen!=NULL)
 		(*chosen).draw2(win);
 
@@ -238,8 +248,14 @@ void map::map::display(sf::RenderWindow &win, engine::player_console &console){
 	while(itt!=towers.end()){
 		(*itt)->draw(win);
 		(*itt)->fire();
+		itm=mobs.begin();
+		while(itm!=mobs.end()){
+			(*itt)->check_collisions(**itm);
+			++itm;
+		}
 		++itt;
 	}
+
 }
 
 double map::map::get_start_x()

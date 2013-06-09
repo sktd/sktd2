@@ -14,11 +14,10 @@ namespace menu
 		void handling_control();
 	private:
 		menu::button new_game;
-		menu::button continue_game;
+	//	menu::button continue_game;
 		menu::button end_game;
-		sf::Text title;
-		sf::Texture selt;
-		sf::Sprite sels;
+		sf::Texture background;
+		sf::Sprite bg;
 		int choice;
 		menu::button *chosen;
 		sf::Font font;

@@ -19,7 +19,7 @@ void menu::button::draw(sf::RenderWindow &win)
 void menu::button::draw2(sf::RenderWindow &win)
 {
 	sf::Texture t;
-	t.loadFromFile("ob.png");
+	t.loadFromFile("Grafika/ob.png");
 	sf::Sprite sp2;
 	sp2.setTexture(t);
 	sp2.setPosition(get_pos_x()-5, get_pos_y()-5);

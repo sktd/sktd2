@@ -1,6 +1,6 @@
 #pragma once
 #include "drawable.h"
-#include "projectile.h"
+#include "mob.h"
 #include <SFML/Graphics.hpp>
 namespace map
 {
@@ -13,10 +13,11 @@ namespace map
 		~tower(void);
 		void virtual fire()=0;
 		int get_cost();
+		void virtual check_collisions(mob &m)=0;
 	//	projectiles projectile;
 	protected:
 		/*std::vector<projectile*> projectiles;
-		std::vector<projectile*>::iterator itp;*/
+		std::vector<projectile*>::iterator it;*/
 		double pos_x;
 		double pos_y;
 		int cost;

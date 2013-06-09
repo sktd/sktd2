@@ -1,4 +1,5 @@
 #include "player_console.h"
+#include "game_engine.h"
 #include <sstream>
 
 engine::player_console::player_console():
@@ -50,6 +51,11 @@ engine::player_console::~player_console(void)
 
 void engine::player_console::display(sf::RenderWindow &win)
 {
+	if(lifes<=0){
+		engine::game_engine::go_to_menu();
+		win.close();
+	}
+
 	std::ostringstream s;
 	s<<lifes;
 	lfs.setString(s.str());
@@ -79,4 +85,9 @@ void engine::player_console::subtract_resources(int how_many)
 int engine::player_console::get_resources()
 {
 	return resources;
+}
+
+void engine::player_console::add_resources(int how_many)
+{
+	resources+=how_many;
 }

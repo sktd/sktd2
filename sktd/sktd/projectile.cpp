@@ -34,3 +34,8 @@ void map::projectile::move(int destination)
 		break;
 	}
 }
+
+double map::projectile::get_damage()
+{
+	return damage;
+}

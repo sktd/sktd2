@@ -41,7 +41,7 @@ void engine::game_engine::manage_game()
 			windowp=new engine::game_window(800, 600, 32, 1, "SKTD");
 			break;
 		case 1:
-			windowp=new menu::menu(800, 600, 32, 3, "SKTD", 200, 150, 270, 390, "p1.png", "p1.png", "p2.png");
+			windowp=new menu::menu(800, 600, 32, 3, "SKTD", 200, 150, 270, 390, "Grafika/p1.png", "p1.png", "Grafika/p2.png");
 			break;
 		}
 		while((*windowp).isOpen()){
