@@ -3,30 +3,30 @@
 #include <sstream>
 
 engine::player_console::player_console():
-	tower1(100, 500, "t1.png", 10),
-	tower2(150, 500, "t2.png", 20, 20, 0.1),
-	tower3(200, 500, "t3.png", 30)
+	tower1(120, 510, "Grafika/tt.png", 40),
+	tower2(170, 510, "Grafika/ballista.png", 20, 30 ,1),
+	tower3(220, 510, "Grafika/catapult.png", 30)
 {
 	font.loadFromFile("Andale_Mono.ttf");
 	std::ostringstream s;
 	s<<tower1.get_cost();
 	sf::Text tekst(s.str(), font, 30);
 	tekst.setColor(sf::Color::White);
-	tekst.setPosition(100,525);
+	tekst.setPosition(115,535);
 	txt1=tekst;
 	s.str("");
 
 	s<<tower2.get_cost();
 	sf::Text tekst2(s.str(), font, 30);
 	tekst2.setColor(sf::Color::White);
-	tekst2.setPosition(150,525);
+	tekst2.setPosition(165,535);
 	txt2=tekst2;
 	s.str("");
 
 	s<<tower3.get_cost();
 	sf::Text tekst3(s.str(), font, 30);
 	tekst3.setColor(sf::Color::White);
-	tekst3.setPosition(200,525);
+	tekst3.setPosition(215,535);
 	txt3=tekst3;
 	s.str("");
 
@@ -34,13 +34,13 @@ engine::player_console::player_console():
 	lfs.setFont(font);
 	lfs.setCharacterSize(50);
 	lfs.setColor(sf::Color::White);
-	lfs.setPosition(20, 500);
+	lfs.setPosition(25, 500);
 
 	resources=100;
 	rscs.setFont(font);
 	rscs.setCharacterSize(50);
 	rscs.setColor(sf::Color::White);
-	rscs.setPosition(300, 500);
+	rscs.setPosition(270, 500);
 
 }
 

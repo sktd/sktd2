@@ -19,12 +19,10 @@ map::tower1::~tower1(void)
 
 void map::tower1::fire(){
 	time=clock.getElapsedTime();
-	timeInt=time.asMilliseconds()+20;
-	if(timeInt%600<20){
-		int destination=int(rand())%4+1;
-		Projectile1 *wsk=new Projectile1(get_pos_x()+10, get_pos_y()+5, "Grafika/fball.png", speed, 10, 10, destination);
+	timeInt=time.asMilliseconds()+21;
+	if(timeInt%1000<20){
+		Projectile2 *wsk=new Projectile2(get_pos_x()+10, get_pos_y()+10, "Grafika/kolowy2.png", 1, 0.5, 10);
 		projectiles.push_back(wsk);
-		clock.restart();
 	}
 
 }
@@ -34,7 +32,7 @@ void map::tower1::draw(sf::RenderWindow &win)
 	win.draw(sp);
 	it=projectiles.begin();
 	while(it!=projectiles.end()){
-		if((*it)->get_pos_x()>700||(*it)->get_pos_x()<0||(*it)->get_pos_y()>500||(*it)->get_pos_y()<0){
+		if((*it)->get_scale()>0.8){
 			delete (*it);
 			projectiles.erase(it);
 			break;
@@ -46,6 +44,7 @@ void map::tower1::draw(sf::RenderWindow &win)
 		(*it)->draw(win);
 		++it;
 	}
+	//sp.setRotation(sp.getRotation()+rotation);
 }
 
 void map::tower1::check_collisions(mob &m)
@@ -53,10 +52,7 @@ void map::tower1::check_collisions(mob &m)
 	it=projectiles.begin();
 	while(it!=projectiles.end()){
 		if(m.collision(**it)){
-			m.reduce_health((**it).get_damage());
-			delete *it;
-			projectiles.erase(it);
-			break;
+			m.reduce_speed((*it)->get_damage());
 		}
 		++it;
 	}

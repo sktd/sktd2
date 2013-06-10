@@ -12,11 +12,14 @@ int main()
 	engine.manage_game();
 	
 
-	sf::Image im;
-	im.loadFromFile("pk.bmp");
+	/*sf::Image im;
+	im.loadFromFile("ballista.png");
 	im.createMaskFromColor(sf::Color::White);
-	im.saveToFile("pocisk_kolowy.png");
-
+	im.saveToFile("ballista.png");
+	sf::Image im2;
+	im2.loadFromFile("catapult.png");
+	im2.createMaskFromColor(sf::Color::White);
+	im2.saveToFile("catapult.png");*/
 
     return 0;
 }

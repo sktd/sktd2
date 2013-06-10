@@ -1,5 +1,8 @@
-SXXXXXX         
-B B B X         
-XXXXXXX         
-XB B            
-XXXE            
+SXXXXXXXXXXXXXXXXXXX
+   B   B   B   B   X
+XXXXXXXXXXXXXXXXXXXX
+X  B   B   B   B   B
+XXXXXXXXXXXXXXXXXXXX
+  B   B   B   B   BX
+EXXXXXXXXXXXXXXXXXXX
+  B   B   B   B   B 

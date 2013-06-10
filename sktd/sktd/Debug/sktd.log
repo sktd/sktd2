@@ -1,12 +1,10 @@
-﻿Build started 2013-06-09 22:48:23.
+﻿Build started 2013-06-10 17:09:21.
      1>Project "D:\Studia\Semestr II\PO\sktd\sktd\sktd.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\sktd.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         D:\Programy\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\sfml\debug\SFML\include /ZI /nologo /W3 /WX- /Od /Oy- /D SFML_STATIC /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt projectile.cpp tower.cpp tower2.cpp
-         tower2.cpp
-     1>d:\studia\semestr ii\po\sktd\sktd\tower2.cpp(8): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\studia\semestr ii\po\sktd\sktd\tower2.cpp(49): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         D:\Programy\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\sfml\debug\SFML\include /ZI /nologo /W3 /WX- /Od /Oy- /D SFML_STATIC /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt player_console.cpp projectile.cpp tower.cpp
+         player_console.cpp
          Generating Code...
          Skipping... (no relevant changes detected)
          tower.cpp
@@ -29,6 +27,7 @@
          Debug\tower.obj
          Debug\tower1.obj
          Debug\tower2.obj
+         Debug\Tower3.obj
          Debug\window.obj
          sktd.vcxproj -> D:\Studia\Semestr II\PO\sktd\Debug\sktd.exe
        FinalizeBuildStatus:
@@ -38,4 +37,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.27
+Time Elapsed 00:00:02.52

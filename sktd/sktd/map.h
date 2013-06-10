@@ -32,8 +32,8 @@ namespace map
 		void move_chosen_l();
 		void set_direction(mob &m);
 	private:
-		const static int width=16;
-		const static int height=6;
+		const static int width=20;
+		const static int height=8;
 		double start_x;
 		double start_y;
 		double end_x;

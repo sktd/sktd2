@@ -99,6 +99,7 @@
     <ClCompile Include="tower.cpp" />
     <ClCompile Include="tower1.cpp" />
     <ClCompile Include="tower2.cpp" />
+    <ClCompile Include="Tower3.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +119,7 @@
     <ClInclude Include="tower.h" />
     <ClInclude Include="tower1.h" />
     <ClInclude Include="tower2.h" />
+    <ClInclude Include="Tower3.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

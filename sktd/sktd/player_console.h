@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "tower1.h"
 #include "tower2.h"
+#include "Tower3.h"
 
 namespace engine
 {
@@ -20,7 +21,7 @@ namespace engine
 		int resources;
 		map::tower1 tower1;
 		map::tower2 tower2;
-		map::tower1 tower3;
+		map::Tower3 tower3;
 		sf::Text txt1;
 		sf::Text txt2;
 		sf::Text txt3;

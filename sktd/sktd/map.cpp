@@ -4,6 +4,7 @@
 #include "mob1.h"
 #include "tower1.h"
 #include "tower2.h"
+#include "Tower3.h"
 
 map::map::map(void)
 {
@@ -186,6 +187,9 @@ void map::map::build_tower(std::string s, double spd, int cst, engine::player_co
 		case 2:
 			wsk=new tower2((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst, 1);
 			break;
+		case 3:
+			wsk=new Tower3((*chosen).get_pos_x(), (*chosen).get_pos_y(), s, spd, cst);
+			break;
 		}
 		if(console.get_resources()>=(*wsk).get_cost()){
 			towers.push_back(wsk);
@@ -213,7 +217,7 @@ void map::map::display(sf::RenderWindow &win, engine::player_console &console){
 		else{
 			time=clock.getElapsedTime();
 			timeInt=time.asSeconds();
-			if(timeInt==1){
+			if(timeInt%2==1){
 				(*itm)->start();
 				clock.restart();
 			}
